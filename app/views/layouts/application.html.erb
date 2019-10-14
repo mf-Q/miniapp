@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Miniapp-blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+  <h1><a href="/">BLOG</a></h1>
+  <% if user_signed_in? %>
+  <ul class="inline-block-button">
+  <li class="inline-block-button">
+  <a  href="/blogs/new">投稿する</a></li>
+  <li class="inline-block-button">
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+  </ul>
+  <% else %>
+  <ul class="inline-block-button">
+  <li class="inline-block-button">
+  <%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+  <li class="inline-block-button">
+  <%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+  <% end %>
+  </header>
+    <%= yield %>
+    
+  </body>
+</html>

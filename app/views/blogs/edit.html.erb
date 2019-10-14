@@ -1,0 +1,16 @@
+ <div class="container">
+<div class="item">
+ <%= form_for @article, url:blog_path do |f| %>
+    <h3>
+      編集する
+    </h3>
+    <hr>
+    <div style="margin: 20px auto">
+    <p class="box"><%= f.text_area :title, placeholder:"タイトル", style: 'width: 80%; height: 30px; border: none;' %></p>
+    <p class="box"><%= f.date_select :date, placeholder:"日付を入れてね（例：20101115 半角で！）" %></p>
+    <p class="box"><%= f.text_area :content, placeholder:"今日は何をした？", style: 'width: 80%; height: 300px; border: none;' %></p>
+    <p class="box"><%= f.submit "保存する" %></p>
+    </div>
+<% end %>
+</div>
+</div>

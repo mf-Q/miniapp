@@ -1,0 +1,4 @@
+<div class="item">
+      <p class="date"><i class="far fa-calendar-alt" style="font-size:15px; margin-right:5px;"></i><%= "#{article.date}" %></p>
+      <h2><%= link_to simple_format(article.title), "/blogs/#{article.id}", method: :get %></h2>
+      </div>

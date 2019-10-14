@@ -1,0 +1,19 @@
+
+<div class="container">
+<div class="item_max">
+<h2><%= @articles.title %></h2>
+<hr>
+<article><%= simple_format@articles.content %></article>
+<% if user_signed_in? %>
+<div class="button">
+<%= link_to '編集', "/blogs/#{@articles.id}/edit", method: :get %>
+</div>
+<div class="button">
+<%= link_to '削除', "/blogs/#{@articles.id}", method: :delete %>
+</div>
+<% end %>
+<div class="button">
+<%= link_to 'トップ', "/", method: :get %>
+</div>
+</div>
+</div>

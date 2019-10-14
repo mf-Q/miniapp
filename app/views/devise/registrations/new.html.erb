@@ -1,0 +1,33 @@
+<div class="container">
+<div class="item">
+<h3>Sign up</h3>
+<hr>
+<div style="margin: 20px auto">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+  
+  <p class="box">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email", style: 'width: 60%; height: 30px; border: none;' %>
+  </p>
+
+  <p class="box">
+    <%= f.text_field :name, placeholder:"お名前", style: 'width: 60%; height: 30px; border: none;' %>
+    </p>
+
+  <p class="box">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> 文字以上)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", placeholder:"パスワード", style: 'width: 60%; height: 30px; border: none;' %>
+  </p>
+
+  <p class="box">
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"パスワード確認のためもう一度お入れください", style: 'width: 60%; height: 30px; border: none;' %>
+  </p>
+
+  <div class="actions">
+  <p class="box"><%= f.submit "Sign up" %></p>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
